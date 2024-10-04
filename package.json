@@ -8,7 +8,8 @@
     "migrate": "knex migrate:latest --env development",
     "migrate:rollback": "knex migrate:rollback --env development",
     "seed": "knex seed:run --env development",
-    "test": "NODE_ENV=test jest"
+    "test": "NODE_ENV=test jest",
+    "knex": "knex"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",

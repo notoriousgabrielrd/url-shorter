@@ -21,4 +21,4 @@ EXPOSE 3000
 ENV NODE_ENV=production
 
 # Executa o comando para iniciar o servidor
-CMD ["npm", "run", "start"]
+CMD ["sh", "-c", "npm run knex migrate:latest && npm run start"]
