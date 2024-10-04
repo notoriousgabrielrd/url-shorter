@@ -1,4 +1,3 @@
-// src/routes/index.js
 
 import express from 'express';
 const router = express.Router();
@@ -6,13 +5,11 @@ const router = express.Router();
 import authRoutes from './auth.js';
 import urlRoutes from './url.js';
 
-// Configurar as rotas
 router.use('/auth', authRoutes);
 router.use('/urls', urlRoutes);
 
-// Rota raiz para verificar se a API está funcionando
 router.get('/', (req, res) => {
-  res.send('API do Encurtador de URLs');
+  res.send('API to short URLs');
 });
 
 export default router;
