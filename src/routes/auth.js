@@ -1,4 +1,3 @@
-// src/routes/auth.js
 
 import express from 'express';
 const router = express.Router();
@@ -11,6 +10,7 @@ router.post(
   [
     check('email', 'E-mail inválido').isEmail(),
     check('password', 'A senha deve ter no mínimo 6 caracteres').isLength({ min: 6 }),
+    check('name', 'Deve conter o campo nome').not().isEmpty()
   ],
   register
 );
