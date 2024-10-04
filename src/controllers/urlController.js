@@ -47,7 +47,7 @@ export const redirectUrl = async (req, res) => {
       await incrementClick(url.url_id);
       return res.redirect(url.original_url);
     } else {
-      return res.status(404).json({ msg: 'URL não encontrada' });
+      return res.status(404).json({ msg: 'URL not found' });
     }
   } catch (err) {
     console.error(err.message);
@@ -63,7 +63,7 @@ export const listUserUrls = async (req, res) => {
 
       if(urls.length === 0) {
         return res.status(404).json({
-          msg: "There ir no url associated with this user"
+          msg: "There is no url associated with this user"
         })
       }
 
