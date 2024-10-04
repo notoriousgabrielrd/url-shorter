@@ -2,7 +2,15 @@
  * @param { import("knex").Knex } knex
  * @returns { Promise<void> }
  */
-exports.up = function(knex) {
+export function up(knex) {
+    return knex.schema.createTable('Users', (table) => {
+        table.increments('user_id').primary()
+        table.string('name').notNullable()
+        table.string('email').unique().notNullable()
+        table.string('password').notNullable()
+        table.timestamp('deleted_at').nullable()
+        table.timestamps(true, true)
+    })
   
 };
 
@@ -10,6 +18,6 @@ exports.up = function(knex) {
  * @param { import("knex").Knex } knex
  * @returns { Promise<void> }
  */
-exports.down = function(knex) {
-  
+export function down(knex) {
+  return knex.schema.dropTable('Users');
 };
