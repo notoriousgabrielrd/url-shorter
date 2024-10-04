@@ -17,10 +17,11 @@ e estabeleci o seguinte MVP:
 ### Como rodar o projeto?
 #### Com docker
 1. npm install
-2. docker-compose up --build
-3. npm run migrate
+2. cp .env.example .env
+3. docker-compose up --build
 
 #### Sem docker
 1. npm install
-2. npm run dev
-3. npm run migrate
+2.cp .env.example .env
+3. npm run dev
+4. npm run migrate
