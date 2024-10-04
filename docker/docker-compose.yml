@@ -10,7 +10,9 @@ services:
     ports:
       - "3000:3000"
     environment:
-      - DATABASE_URL=${DATABASE_URL}  # Captura a variável DATABASE_URL do arquivo .env
+      - DATABASE_URL=postgres://postgres:password@postgres-db:5432/mydatabase
+    env_file: 
+      -  ../.env
     depends_on:
       - db
     networks:
