@@ -1,5 +1,3 @@
-// src/middlewares/auth.js
-
 import jwt from 'jsonwebtoken';
 
 export default function (req, res, next) {
@@ -7,13 +5,12 @@ export default function (req, res, next) {
   const token = authHeader && authHeader.split(' ')[1];
 
   if (!token) {
-    // Se não houver token, permitir que a requisição prossiga sem autenticação
     return next();
   }
 
   try {
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
-    req.user = decoded; // Adiciona o usuário à requisição
+    req.user = decoded;
     next();
   } catch (err) {
     console.error('Token inválido');
