@@ -22,6 +22,6 @@ e estabeleci o seguinte MVP:
 
 #### Sem docker
 1. npm install
-2.cp .env.example .env
+2. cp .env.example .env
 3. npm run dev
 4. npm run migrate
